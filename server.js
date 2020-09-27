@@ -4,7 +4,7 @@ const cors= require("cors");
 const port=process.env.port || 3020;
 const app =express();
 
-let allowlist = ['http://localhost:3000', 'http://example2.com']
+let allowlist = ['http://localhost:3000', 'https://jacktweetclient.azurewebsites.net']
 let corsOptionsDelegate = function (req, callback) {
   var corsOptions;
   if (allowlist.indexOf(req.header('Origin')) !== -1) {
