@@ -1,8 +1,8 @@
 const express = require("express");
-const cors= require("cors");
+const cors = require("cors");
 
-const port=process.env.port || 3020;
-const app =express();
+const port = process.env.port || 3020;
+const app = express();
 
 let allowlist = ['http://localhost:3000', 'https://jacktweetclient.azurewebsites.net']
 let corsOptionsDelegate = function (req, callback) {
@@ -17,15 +17,18 @@ let corsOptionsDelegate = function (req, callback) {
 
 
 
-app.get("/api/tweethandles", cors(corsOptionsDelegate) ,(req, res)=>{
-const tweetHandles =[
-    {id:1, handleName:"jeyajack"},
-    {id:2,handleName:"jill"},
-    {id:3,handleName:"guna"}
+app.get("/api/tweethandles", cors(corsOptionsDelegate), (req, res) => {
+  const tweetHandles = [
+    { id: 1, handleName: "jeyajack" },
+    { id: 2, handleName: "jill" },
+    { id: 3, handleName: "guna" },
+    { id: 4, handleName: "anisha" },
+    { id: 5, handleName: "clinton" },
+    { id: 6, handleName: "suja" }
 
-]
-    
-    res.send (tweetHandles)
+  ]
+
+  res.send(tweetHandles)
 })
 
 app.listen(port, console.log(`lisening at ${port}`))
